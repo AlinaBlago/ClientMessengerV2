@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -86,6 +87,10 @@ public class LogInController {
                         //Закрываем текущее окно
                         Stage currentStageToClose = (Stage) signUp_btn.getScene().getWindow();
                         currentStageToClose.close();
+                    }else{
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setContentText("Wrong login or password");
+                        alert.show();
                     }
 
                 } catch (Exception e) {
